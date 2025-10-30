@@ -1,5 +1,5 @@
 # Tp6_Grupo4POO
-trabajo práctico N5 POO
+trabajo práctico N6 POO
 
 Flores Mauro. Github: Dumbi34
 
