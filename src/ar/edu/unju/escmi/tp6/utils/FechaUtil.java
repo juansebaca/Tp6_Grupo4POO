@@ -5,8 +5,13 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
 public class FechaUtil {
-    public static LocalDate convertirStringLocalDate(String fechaStr) throws DateTimeParseException {
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
-        return LocalDate.parse(fechaStr, formatter);
+    private static final DateTimeFormatter FORMATO = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+    public static LocalDate convertirStringLocalDate(String fechaStr) throws Exception {
+        try {
+            return LocalDate.parse(fechaStr, FORMATO);
+        } catch (DateTimeParseException e) {
+            throw new Exception("Formato de fecha inválido. Use dd/MM/yyyy. Error: " + e.getMessage());
+        }
     }
 }
